@@ -29,10 +29,8 @@ public class TCPClient implements Runnable {
                 String clientData = clientRead.readLine();
                 //sending the massage to the server
                 printStream.println(clientData);
-
-                System.out.print("\nServer: ");
                 serverRead = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                System.out.println(serverRead.readLine());
+                System.out.println("Server: "+serverRead.readLine());
 
                 if (clientData.equalsIgnoreCase("bye")) {
                     System.out.println("Connection ended by client");
