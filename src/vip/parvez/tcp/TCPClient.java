@@ -23,7 +23,7 @@ public class TCPClient implements Runnable {
             socket = new Socket("localhost", port);
             System.out.println("Client Start");
             while (true) {
-                System.out.print("\nClient: ");
+                System.out.println("Client: ");
                 printStream = new PrintStream(socket.getOutputStream());
                 clientRead = new BufferedReader(new InputStreamReader(System.in));
                 String clientData = clientRead.readLine();

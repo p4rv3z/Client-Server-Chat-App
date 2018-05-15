@@ -21,14 +21,14 @@ public class TCPServer implements Runnable {
         BufferedReader clientRead = null, serverRead = null;
         PrintStream printStream = null;
         try {
-            System.out.print("Server Start");
+            System.out.println("Server Start");
             serverSocket = new ServerSocket(port);
             socket = serverSocket.accept();
             while (true) {
                 clientRead = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                System.out.println("\nClient: " + clientRead.readLine());
+                System.out.println("Client: " + clientRead.readLine());
 
-                System.out.print("\nServer:");
+                System.out.println("Server:");
                 serverRead = new BufferedReader(new InputStreamReader(System.in));
                 String reply = serverRead.readLine();
 
